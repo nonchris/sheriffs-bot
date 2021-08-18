@@ -67,7 +67,8 @@ if __name__ == '__main__':
     bot.remove_command('help')  # unload default help message
     initial_extensions = [
         'cogs.misc',
-        'cogs.help'
+        'cogs.help',
+        'cogs.listeners'
     ]
 
     for extension in initial_extensions:
