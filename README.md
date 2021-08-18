@@ -1,6 +1,6 @@
-# discord-bot-template
-Generic, functional bot based on discord.py  
-Including a custom help command and ping command, utils for easy embed creation, logging configuration, and a general bot setup
+# bot for sheriff crazy
+Used for greeting a user and giving a role after a certain amount of messages.  
+It also counts the messages sent by a user, for later implementations of like a custom level system.  
 
 ## setup
 `pip install -r requirements.txt`  
@@ -14,6 +14,7 @@ Including a custom help command and ping command, utils for easy embed creation,
 | `export VERSION="unknown"` | Version the bot is running |
 | `export OWNER_NAME="unknwon"` | Name of the bot owner |
 | `export OWNER_ID="100000000000000000"` | ID of the bot owner |
+| `export REQUIRED_MESSAGES="40"` | Messages to be sent before getting the role |
 
 The shown values are the default values that will be loaded if nothing else is specified.
 
