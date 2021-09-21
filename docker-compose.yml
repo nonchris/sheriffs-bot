@@ -1,0 +1,20 @@
+---
+version: "3"
+services:
+  verification-listener:
+    build: .
+    container_name: discord-sheriff-bot
+    volumes:
+      - "./data/:/app/data:rw"
+    environment:
+      - UID=1000 
+      - GID=1000
+      - TOKEN=ODc3NTY3OTU0MjQ4Njg3NjI2.YR0g2A.IkbqwELlo_iLlqmKQbFGYQpjM7s
+      - PREFIX=s!
+      - OWNER_ID=
+      - OWNER_NAME=Chris#1234
+      - REQUIRED_MESSAGES=40
+      - VERSION=v1.0.1
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
