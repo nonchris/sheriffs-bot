@@ -3,8 +3,8 @@ from typing import List
 import discord
 from discord.ext import commands
 
-from utils import utils as ut
-from database import access_users_db as user_db
+from bot.utils import utils as ut
+from bot.database import access_users_db as user_db
 
 
 ### @package misc

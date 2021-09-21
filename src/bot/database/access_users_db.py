@@ -1,9 +1,9 @@
 import datetime
 from typing import Union, List
 
-from sqlalchemy import select, and_
+from sqlalchemy import select
 
-import database.db_models as db
+import bot.database.db_models as db
 
 
 def get_all_users(session=db.open_session()) -> Union[List[db.Users], None]:

@@ -1,14 +1,8 @@
-import os
-import time
-import csv
-import re
-
-from database import db_models as db
-from database import access_users_db as user_db
+from bot.database import access_users_db as user_db, db_models as db
 
 import discord
 from discord.ext import commands
-from environment import REQUIRED_MESSAGES
+from bot.environment import REQUIRED_MESSAGES
 
 class BaseRoleManagement(commands.Cog):
     """

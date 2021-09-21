@@ -6,8 +6,8 @@ from discord.ext import commands
 
 # setup of logging and env-vars
 # logging must be initialized before environment, to enable logging in environment
-from log_setup import logger
-from environment import PREFIX, TOKEN
+from .log_setup import logger
+from .environment import PREFIX, TOKEN
 
 """
 This bot is based on a template by nonchris
@@ -62,16 +62,16 @@ async def on_ready():
         activity=discord.Activity(type=discord.ActivityType.watching, name=f"{PREFIX}help"))
 
 
-if __name__ == '__main__':
+def start_bot():
     # LOADING Extensions
     bot.remove_command('help')  # unload default help message
     initial_extensions = [
-        'cogs.misc',
-        'cogs.help',
-        'cogs.listeners'
+        '.cogs.misc',
+        '.cogs.help',
+        '.cogs.listeners'
     ]
 
     for extension in initial_extensions:
-        bot.load_extension(extension)
+        bot.load_extension(extension, package=__package__)
 
     bot.run(TOKEN)
