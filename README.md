@@ -1,50 +1,11 @@
 # bot for sheriff crazy
-Used for greeting a user and giving a role after a certain amount of messages.  
-It also counts the messages sent by a user, for later implementations of like a custom level system.  
+This bot is written for an old friend of mine, who actively streams on twitch.  
+It counts messages and gives users a role after n-messages sent on the server that allows users to share pictures.  
+
+All sent messages will be counted for each user so that we could implement a custom level system one day (message content isn't saved!).  
 
 ## setup
-`pip install -r requirements.txt`  
-`export TOKEN="your-key"`  
-`python3 main.py`
-
-#### optional env variables
-| parameter |  description |
-| ------ |  ------ |
-| `export PREFIX="b!"`  | Command prefix |
-| `export VERSION="unknown"` | Version the bot is running |
-| `export OWNER_NAME="unknwon"` | Name of the bot owner |
-| `export OWNER_ID="100000000000000000"` | ID of the bot owner |
-| `export REQUIRED_MESSAGES="40"` | Messages to be sent before getting the role |
-
-The shown values are the default values that will be loaded if nothing else is specified.
-
-## features
-This bot does 'nothing' but is completely functional!  
-_What is does:_  
-* setup logging
-* scan env variables for a more customizable behaviour
-* overwrite `on_ready()` function for information at startup
-* make bot react to custom prefix and mention
-* add more advanced help command
-* register example cog with `b!ping` command
-* util functions for easy embed creation, id extraction and more
-
-Note:  
-The bot uses all intents by default, those are required for such simple things like 'display member-count at startup'.  
-You need to enable those intents in the discord developers portal under "Application/Bot/Privileged Gateway Intents".  
-It's possible reconfigure the requested intents in `main.py` if you don't need them.  
-But I'd suggest using them all for the beginning, especially if you're relatively new to discord.py.
-
-## about
-This repository contains code that was written by me across various bot-projects, like:  
-https://github.com/nonchris/discord-fury  
-https://github.com/nonchris/quiz-bot  
-https://github.com/Info-Bonn/poll-bot
-
-I collected the most useful and generic functions to save me some time when starting the next bot-project. 
-
-### dependencies 
-This project is based on `discord.py V1.x` minimum required: V1.5.1
-
-### documentation
-In order to render this documentation, just call `doxygen`
+I won't show you how to set this project up, since it contains hardcoded variables...  
+There are only two reasons why this is public:  
+1. To show his server members what the bot does and that it doesn't log message contents etc.  
+2. So that I'm able to deploy it better without bothering about access to my private repos.
