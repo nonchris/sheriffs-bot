@@ -29,6 +29,7 @@ class BaseRoleManagement(commands.Cog):
         if user.sent_messages < REQUIRED_MESSAGES or user.is_verified:
             session.add(user)
             session.commit()
+            session.close()
             return
 
         # basically the one case where a user has to be verified when just passed the limit
@@ -38,14 +39,17 @@ class BaseRoleManagement(commands.Cog):
         user.is_verified = True
         session.add(user)
         session.commit()
+        session.close()
 
     @commands.Cog.listener()
     async def on_member_join(self, member: discord.Member):
-        if user_db.get_user_by_id(member.id) is None:
+        session = db.open_session()
+        if user_db.get_user_by_id(member.id, session=session) is None:
             user_db.add_user(member.id, member.display_name)
 
         await member.send(f"Hey {member.display_name}, thanks for joining **{member.guild.name}**, have a great time!\n"
                           f"~Sheriff")
+        session.close()
 
     @commands.Cog.listener()
     async def on_member_update(self, before: discord.Member, after: discord.Member):
@@ -57,6 +61,7 @@ class BaseRoleManagement(commands.Cog):
             user.is_verified = True
             session.add(user)
             session.commit()
+            session.close()
 
 
 def setup(bot):

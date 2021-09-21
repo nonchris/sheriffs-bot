@@ -25,3 +25,4 @@ def add_user(user_id: int, username: str,
                     sent_messages=sent_messages, join_date=join_date, is_verified=is_verified)
     session.add(user)
     session.commit()
+    session.close()
