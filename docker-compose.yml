@@ -1,15 +1,15 @@
 ---
 version: "3"
 services:
-  verification-listener:
+  sheriffs-bot:
     build: .
-    container_name: discord-sheriff-bot
+    container_name: discord-sheriffs-bot
     volumes:
       - "./data/:/app/data:rw"
     environment:
       - UID=1000 
       - GID=1000
-      - TOKEN=ODc3NTY3OTU0MjQ4Njg3NjI2.YR0g2A.IkbqwELlo_iLlqmKQbFGYQpjM7s
+      - TOKEN=
       - PREFIX=s!
       - OWNER_ID=
       - OWNER_NAME=Chris#1234

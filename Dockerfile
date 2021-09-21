@@ -19,4 +19,4 @@ COPY . /app
 
 RUN python3 -m pip install -e .
 
-CMD sheriff-bot
+CMD sheriffs-bot
